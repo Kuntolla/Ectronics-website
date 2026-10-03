@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electronics Store</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+     <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <style>
+        body {
+            
+           font-family: Arial, sans-serif;
+        }
+
+        .navbar .nav-link {
+            font-weight: 500;
+            margin: 0 5px;
+        }
+        .home-section{
+            background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=1600&q=80");
+        background-size: cover;
+        min-height: 650px;
+
+            
+        }
+        .home-h1{
+            font-size: 50px;
+            
+        }
+        .home-card{
+            margin-top: 100px;
+            
+        }
+       
+        .categories{
+            padding: 80px;
+           
+        }
+        .categories-p{
+            font-size: 20px;
+            color: rgb(29, 29, 243);
+            font-weight: bold;
+        }
+        .category-h1{
+            font-size: 40px;
+            font-weight: bold;
+
+        }
+        .mobile{
+            border-width: 2px;
+            border-color: black;
+        }
+        
+        .category-card{
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+        .category-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        .icon{
+            font-size:30px;
+        }
+        .shop-controls{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            gap: 20px;
+        }
+        .input-element{
+             padding: 13px;
+
+             border: 1px solid #ccc;
+
+             border-radius: 5px;
+
+             width: 250px;
+        }
+
+        .product-container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 25px;
+        }
+        .product-card {
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: white;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.12);
+}
+.product-image {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+.product-info {
+    padding: 20px;
+}
+.product-info h3 {
+    margin-bottom: 8px;
+}
+        .deal-section{
+            background-image: linear-gradient(to right,
+            #111827,
+            #2563eb);
+            color: white;
+            min-height: 350px;
+            display: flex;
+           align-items: center;
+           justify-content: center;
+           text-align: center;
+        }
+        .deal-heading-one{
+            font-size: 50px;
+            margin: 15px;
+        }
+        .deal-heading-two{
+            font-size: 30px;
+            color: #bfdbfe;
+        }
+        .brand-card{
+            padding: 30px 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .brand-card:hover{
+            background: #0d6efd;
+            color: white;
+            transform: translateY(-5px);
+        }
+        .new-card{
+            width: 400px;
+            border: 15px;
+        }
+        .arrived-image{
+            width:400px;
+            border-radius: 15px;
+        }
+        .new-h4{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .new-p{
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
+        .arrived-image-1{
+            height: 240px;
+            width: 400px;
+            border-radius: 15px;
+        }
+        .arrived-image-2{
+            height: 240px;
+            width: 400px;
+            border-radius: 15px;
+        }
+        .about-image{
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #dbeafe;
+            border-radius: 15px;
+        }
+        .about-p{
+            line-height: 1.8;
+
+            margin: 15px 0;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .about-h{
+            font-weight: bold;
+        }
+        .contact-info{
+            padding: 30px;
+
+    background: #f5f7fb;
+
+    border-radius: 10px;
+    margin-top: 20px;
+        }
+    .footer-link{
+        display: block;
+        color: #adb5bd;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+    .footer-link:hover{
+        color: white;
+    }
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 550px;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+}
+
+
+
+
+
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold text-primary fs-3" href="#home">
+            <i class="bi bi-lightning-charge-fill"></i>
+            ElectroStore
+        </a>
+
+        
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#shop">Shop</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#categories">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#brands">
+                        Brands
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#deals">
+                        Deals
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#new-arrivals">
+                        New Arrivals
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- Header icons -->
+
+            <div class="d-flex gap-3">
+
+                <button
+                    class="btn btn-light position-relative"
+                    onclick="openLogin()"
+                >
+                    <i class="bi bi-person fs-5"></i>
+                </button>
+
+
+                <button
+                    class="btn btn-light position-relative"
+                    onclick="showWishlist()"
+                >
+                    <i class="bi bi-heart fs-5"></i>
+
+                    <span
+                        id="wishlistCount"
+                        class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="btn btn-light position-relative"
+                    onclick="showCart()"
+                >
+                    <i class="bi bi-cart3 fs-5"></i>
+
+                    <span
+                        id="cartCount"
+                        class="badge bg-primary position-absolute top-0 start-100 translate-middle"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+<section class="home-section" id="home">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-6 home-card">
+                <p class="text-info fw-bold"> WELCOME TO ELECTROSTORE</p>
+                <h1 class="text-white fw-bold home-h1 display-3">Latest Electronics
+                    At Amazing Prices</h1>
+                    <p class="text-white fw-bold"> Discover smartphones, laptops, televisions,
+                    headphones, cameras and much more.</p>
+                    <a href="#shop"
+                   class="btn btn-primary btn-lg mt-3">
+                    Shop Now
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="categories" id="categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1 class="category-h1">Category</h1> 
+
+                <p class="categories-p">Explore our full range of Electronics</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    
+                   <div class="card category-card text-center h-100"
+                    onclick="filterCategory('Mobile')">
+                    <div class="card-body">
+                         <i class="bi bi-phone  text-primary icon"></i>
+
+                        <h5 class="mt-3">
+                            Mobiles
+                        </h5>
+                    </div>
+                   </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card category-card text-center h-100"
+                    onclick="filterCategory('Laptop')">
+                        <div class="card-body">
+                            <i class="bi bi-laptop text-primary icon"></i>
+                            <h5 class="mt-3">
+                            Laptops
+                        </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card category-card text-center h-100"
+                     onclick="filterCategory('TV')">
+                        <div class="card-body">
+                            <i class="bi bi-tv text-primary icon"></i>
+                            <h5 class="mt-3">
+                           Television
+                        </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card category-card text-center h-100"
+                     onclick="filterCategory('Audio')">
+                        <div class="card-body">
+                            <i class="bi bi-headphones text-primary icon"></i>
+                            <h5 class="mt-3">
+                           Audio
+                        </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card category-card text-center h-100"
+                    onclick="filterCategory('Camera')">
+                        <div class="card-body">
+                            <i class="bi bi-camera text-primary icon"></i>
+                            <h5 class="mt-3">
+                          Cameras
+                        </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card category-card text-center h-100"
+                    onclick="filterCategory('Accessories')">
+                        <div class="card-body">
+                            <i class="bi bi-keyboard text-primary icon"></i>
+                            <h5 class="mt-3">
+                          Accessories
+                        </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>        
+            </div>                 
+    </div>
+</section>
+
+<!--------shop--------->
+
+<section>
+    <div class="container" id="shop">
+        <div class="text-center">
+            <p class="text-primary fw-bold">OUR PRODUCTS</p>
+            <h1 class="fw-bold">Featured Products</h1>
+        </div>
+        <div class="shop-controls">
+            <input
+            type="text"
+            id="searchBox"
+            placeholder="Search products..."
+            class="input-element"
+            onkeyup="searchProducts()"
+        >
+         <select id="sortProducts" onchange="sortProducts()" class="input-element">
+            <option value="">Sort Products</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
+            
+        </div>
+        <div id="productContainer" class="row g-4">
+        </div>
+        </div>
+</section>
+
+<!--------deals-------->
+
+<section class="deal-section" id="deals">
+    <div>
+        <p>LIMITED TIME OFFER</p>
+
+        <h2 class="deal-heading-one">Special Deals</h2>
+
+        <h3 class="deal-heading-two">Up to 50% OFF</h3>
+
+        <p>
+            Grab the latest electronics at
+            discounted prices.
+        </p>
+
+        <a href="#shop" class="btn btn-primary">
+            Shop Deals
+        </a>
+    </div>
+</section>
+
+
+<!-------brands--------->
+
+<section class="p-5" id="brands">
+    <div class="container">
+        <div class="text-center">
+        <p class="text-primary fw-bold">POPULAR</p>
+        <h1 class="fw-bold mb-5">Top Brands</h1>
+        </div>
+        <div class="row text-center">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    Apple
+                </div>
+                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    Samsung
+                </div>
+                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    Sony
+                </div>
+                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    Dell
+                </div>
+                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    HP
+                </div>
+                </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="brand-card">
+                    Lenovo
+                </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-------new arrivals--------->
+
+<section class="bg-light py-5" id="new-arrivals">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-primary fw-bold"> JUST ARRIVED</p>
+            <h1 class="fw-bold">New Arrivals</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bg-white text-center new-card border-0 shadow-sm">
+                    <img src="smartphone.webp" class="arrived-image"/>
+                    
+                        <h4 class="mt-3 new-h4">
+                            Latest Smartphones
+                        </h4>
+                        <p class="new-p text-muted">
+                            Discover the latest smartphones.
+                        </p>                    
+                </div>
+
+            </div>
+             <div class="col-md-4">
+                <div class="bg-white text-center new-card border-0 shadow-sm">
+                    <img src="laptop-1.jpg" class="arrived-image-1"/>
+                    
+                        <h4 class="mt-3 new-h4">
+                           Latest Laptops 
+                        </h4>
+                        <p class="new-p text-muted">
+                            Powerful laptops for everyone.
+                        </p>                    
+                </div>
+
+            </div>
+             <div class="col-md-4">
+                <div class="bg-white text-center new-card border-0 shadow-sm">
+                    <img src="audio-1.jpeg" class="arrived-image-2"/>
+                    
+                        <h4 class="mt-3 new-h4">
+                            Wireless Audio
+                        </h4>
+                        <p class="new-p text-muted">
+                            High-quality wireless sound.
+                        </p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!---------about---------->
+
+<section class="py-5" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-image">
+                   <i class="bi bi-shop display-1 text-primary"></i>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="about-p">ABOUT US</p>
+                <h1 class="about-h display-6">Your Trusted Electronics Store</h1>
+                <p class="text-muted">ElectroStore provides a wide range of electronics
+            products from trusted brands.</p>
+            <p class="text-muted">Our goal is to provide quality products,
+            affordable prices and excellent customer service.</p>
+            <div class="d-flex flex-column gap-3">
+                <span>
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        Genuine Products
+                    </span>
+
+                    <span>
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        Secure Shopping
+                    </span>
+
+                    <span>
+                        <i class="bi bi-check-circle-fill text-primary"></i>
+                        Fast Delivery
+                    </span>
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!--------contact us------->
+
+
+<section class="bg-light p-5" id="contact">
+    <div class="contaner">
+         <div class="text-center mb-5">
+
+            <p class="text-primary fw-bold">
+                GET IN TOUCH
+            </p>
+
+            <h2 class="fw-bold">
+                Contact Us
+            </h2>
+        </div>
+        <div class="row g-5" >
+            <div class="col-lg-7">
+                <form onsubmit="submitContact(event)">
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter subject"
+                            required
+                        >
+
+                    </div>
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Message
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            placeholder="Enter your message"
+                            required
+                        ></textarea>
+
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="card border-0 shadow-sm contact-info">
+
+                    <div class="card-body p-4 ">
+
+                        <h4 class="fw-bold mb-4">
+                            Contact Information
+                        </h4>
+
+                        <p>
+                            <i class="bi bi-geo-alt-fill text-primary"></i>
+                            Hyderabad, Telangana
+                        </p>
+
+                        <p>
+                            <i class="bi bi-telephone-fill text-primary"></i>
+                            91+9441407185
+                        </p>
+
+                        <p>
+                            <i class="bi bi-envelope-fill text-primary"></i>
+                            manishakuntolla97@gmail.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!------footer-------->
+
+
+<footer class="bg-dark text-white p-5">
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-5">
+
+                <h3>
+                    <i class="bi bi-lightning-charge-fill text-primary"></i>
+                    ElectroStore
+                </h3>
+
+                <p class="text-secondary">
+                    Your one-stop destination for
+                    electronics.
+                </p>
+
+            </div>
+            <div class="col-md-3">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a href="#home" class="footer-link">
+                    Home
+                </a>
+
+                <a href="#shop" class="footer-link">
+                    Shop
+                </a>
+
+                <a href="#categories" class="footer-link">
+                    Categories
+                </a>
+
+                <a href="#about" class="footer-link">
+                    About
+                </a>
+
+            </div>
+             <div class="col-md-4">
+
+                <h5>
+                    Customer Service
+                </h5>
+
+                <a href="#contact" class="footer-link">
+                    Contact
+                </a>
+
+                <a href="#" class="footer-link">
+                    Orders
+                </a>
+
+                <a href="#" class="footer-link">
+                    Wishlist
+                </a>
+
+                <a href="#" class="footer-link">
+                    Reviews
+                </a>
+
+            </div>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between py-3">
+
+            <p class="mb-0">
+                © 2026 ElectroStore
+            </p>
+
+            <button
+                class="btn btn-link text-info"
+                onclick="openAdmin()"
+            >
+                Admin
+            </button>
+
+        </div>
+
+
+
+
+            </div>
+   
+</footer>
+<!-------LOGIN MODAL------->
+<div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Login
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    class="form-control mb-3"
+                    placeholder="Email"
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    class="form-control"
+                    placeholder="Password"
+                >
+
+                <p id="loginMessage"
+                   class="mt-3">
+                </p>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="login()"
+                >
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-------CART MODAL------->
+<div
+    class="modal fade"
+    id="cartModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Your Cart
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div id="cartItems">
+                </div>
+
+                <hr>
+
+                <h5 id="cartTotal">
+                    Total: ₹0
+                </h5>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="checkout()"
+                >
+                    Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--------ADMIN MODAL------->
+<div
+    class="modal fade"
+    id="adminModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Admin Panel
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="row g-3">
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Products
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Categories
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Brands
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Inventory
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Orders
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary w-100">
+                            Reviews
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    
+
+    
+
+
+
+   
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+
+
+const products = [
+
+    {
+        id: 1,
+        name: "iPhone 16",
+        category: "Mobile",
+        price: 69999,
+        image:
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 2,
+        name: "Samsung Galaxy",
+        category: "Mobile",
+        price: 45999,
+        image:
+        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 3,
+        name: "Dell Laptop",
+        category: "Laptop",
+        price: 65999,
+        image:
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 4,
+        name: "MacBook Air",
+        category: "Laptop",
+        price: 89999,
+        image:
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 5,
+        name: "Sony Television",
+        category: "TV",
+        price: 54999,
+        image:
+        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 6,
+        name: "Sony Headphones",
+        category: "Audio",
+        price: 12999,
+        image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 7,
+        name: "Canon Camera",
+        category: "Camera",
+        price: 74999,
+        image:
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+    },
+
+    {
+        id: 8,
+        name: "Wireless Keyboard",
+        category: "Accessories",
+        price: 2999,
+        image:
+        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
+    }
+
+];
+
+
+let cart = [];
+
+let wishlist = [];
+
+
+// ========================================
+// DISPLAY PRODUCTS
+// ========================================
+
+function displayProducts(list = products) {
+
+    const container =
+        document.getElementById("productContainer");
+
+    container.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        container.innerHTML = `
+            <div class="col-12 text-center">
+                <h4>No products found.</h4>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.forEach(product => {
+
+        container.innerHTML += `
+
+        <div class="col-sm-6 col-lg-3">
+
+            <div class="card product-card h-100 border-0 shadow-sm">
+
+                <img
+                    src="${product.image}"
+                    class="card-img-top product-image"
+                    alt="${product.name}"
+                >
+
+                <div class="card-body">
+
+                    <small class="text-muted">
+                        ${product.category}
+                    </small>
+
+                    <h5 class="card-title mt-2">
+                        ${product.name}
+                    </h5>
+
+                    <h5 class="text-primary">
+                        ₹${product.price.toLocaleString()}
+                    </h5>
+
+                    <div class="d-flex gap-2 mt-3">
+
+                        <button
+                            class="btn btn-primary flex-grow-1"
+                            onclick="addToCart(${product.id})"
+                        >
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+                        </button>
+
+                        <button
+                            class="btn btn-outline-danger"
+                            onclick="addToWishlist(${product.id})"
+                        >
+                            <i class="bi bi-heart"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+// ========================================
+// CART
+// ========================================
+
+function addToCart(id) {
+
+    const product =
+        products.find(p => p.id === id);
+
+    cart.push(product);
+
+    updateCartCount();
+
+    alert(product.name + " added to cart.");
+}
+
+
+function updateCartCount() {
+
+    document.getElementById("cartCount")
+        .innerText = cart.length;
+}
+
+
+function showCart() {
+
+    displayCart();
+
+    const modal =
+        new bootstrap.Modal(
+            document.getElementById("cartModal")
+        );
+
+    modal.show();
+}
+
+
+function displayCart() {
+
+    const container =
+        document.getElementById("cartItems");
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+    container.innerHTML = "";
+
+    let total = 0;
+
+
+    if (cart.length === 0) {
+
+        container.innerHTML =
+            `<p class="text-muted">Your cart is empty.</p>`;
+
+        totalElement.innerText =
+            "Total: ₹0";
+
+        return;
+    }
+
+
+    cart.forEach((product, index) => {
+
+        total += product.price;
+
+
+        container.innerHTML += `
+
+        <div class="cart-item">
+
+            <div>
+
+                <strong>
+                    ${product.name}
+                </strong>
+
+                <br>
+
+                <span>
+                    ₹${product.price.toLocaleString()}
+                </span>
+
+            </div>
+
+
+            <button
+                class="btn btn-sm btn-danger"
+                onclick="removeFromCart(${index})"
+            >
+                Remove
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+
+    totalElement.innerText =
+        "Total: ₹" + total.toLocaleString();
+}
+
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCartCount();
+
+    displayCart();
+}
+
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        return;
+    }
+
+
+    alert("Order placed successfully!");
+
+
+    cart = [];
+
+    updateCartCount();
+
+    displayCart();
+}
+
+
+// ========================================
+// WISHLIST
+// ========================================
+
+function addToWishlist(id) {
+
+    const product =
+        products.find(p => p.id === id);
+
+
+    if (!wishlist.includes(product)) {
+
+        wishlist.push(product);
+
+        document.getElementById("wishlistCount")
+            .innerText = wishlist.length;
+
+        alert(
+            product.name +
+            " added to wishlist."
+        );
+
+    } else {
+
+        alert(
+            "Product already exists in wishlist."
+        );
+
+    }
+
+}
+
+
+function showWishlist() {
+
+    if (wishlist.length === 0) {
+
+        alert("Wishlist is empty.");
+
+        return;
+    }
+
+
+    let message = "Wishlist:\n\n";
+
+
+    wishlist.forEach(product => {
+
+        message +=
+            product.name +
+            " - ₹" +
+            product.price.toLocaleString() +
+            "\n";
+
+    });
+
+
+    alert(message);
+}
+
+
+// ========================================
+// SEARCH
+// ========================================
+
+function searchProducts() {
+
+    const value =
+        document.getElementById("searchBox")
+        .value
+        .toLowerCase();
+
+
+    const filtered =
+        products.filter(product =>
+
+            product.name
+                .toLowerCase()
+                .includes(value)
+
+            ||
+
+            product.category
+                .toLowerCase()
+                .includes(value)
+
+        );
+
+
+    displayProducts(filtered);
+}
+
+
+// ========================================
+// CATEGORY FILTER
+// ========================================
+
+function filterCategory(category) {
+
+    const filtered =
+        products.filter(
+            product =>
+            product.category === category
+        );
+
+
+    displayProducts(filtered);
+
+
+    document.getElementById("shop")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+// ========================================
+// SORT
+// ========================================
+
+function sortProducts() {
+
+    const value =
+        document.getElementById("sortProducts")
+        .value;
+
+
+    let sorted = [...products];
+
+
+    if (value === "low") {
+
+        sorted.sort(
+            (a, b) =>
+            a.price - b.price
+        );
+
+    }
+
+
+    if (value === "high") {
+
+        sorted.sort(
+            (a, b) =>
+            b.price - a.price
+        );
+
+    }
+
+
+    displayProducts(sorted);
+}
+
+
+// ========================================
+// LOGIN
+// ========================================
+
+function openLogin() {
+
+    const modal =
+        new bootstrap.Modal(
+            document.getElementById("loginModal")
+        );
+
+    modal.show();
+}
+
+
+function login() {
+
+    const email =
+        document.getElementById("loginEmail")
+        .value;
+
+    const password =
+        document.getElementById("loginPassword")
+        .value;
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    if (email === "" || password === "") {
+
+        message.innerText =
+            "Please enter email and password.";
+
+        message.className =
+            "text-danger mt-3";
+
+        return;
+    }
+
+
+    message.innerText =
+        "Login successful!";
+
+    message.className =
+        "text-success mt-3";
+}
+
+
+// ========================================
+// ADMIN
+// ========================================
+
+function openAdmin() {
+
+    const modal =
+        new bootstrap.Modal(
+            document.getElementById("adminModal")
+        );
+
+    modal.show();
+}
+
+
+// ========================================
+// CONTACT
+// ========================================
+
+function submitContact(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your message has been sent."
+    );
+
+    event.target.reset();
+}
+
+
+// ========================================
+// INITIALIZE
+// ========================================
+
+displayProducts();
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
